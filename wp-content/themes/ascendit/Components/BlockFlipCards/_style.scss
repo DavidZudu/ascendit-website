@@ -1,0 +1,122 @@
+[name="BlockFlipCards"] {
+  .container {
+    // Add necessary styles if required
+  }
+
+  .columns-grid {
+    height: 600px;
+    display: flex;
+    gap: 32px;
+
+    .columns-grid__column {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+
+      .column-entry {
+        position: relative;
+        perspective: 800px;
+        .content {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          transition: transform 0.5s ease-in-out;
+          transform-style: preserve-3d;
+          &.flipped {
+            transform: rotateY(180deg);
+          }
+        }
+
+        .front,
+        .back {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          backface-visibility: hidden;
+          border-radius: 16px;
+          background: $mid-dark-color; // Adjusted for proper SCSS syntax
+          overflow: hidden;
+          padding: 32px;
+          .toggle {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            width: 32px;
+            height: 32px;
+            border-radius: 99%;
+            border: 2px solid $primary-color;
+            background: 0;
+            color: $primary-color;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+            margin: 0;
+            background: $dark-color;
+            img {
+              transform: rotate(45deg);
+              width: 10px;
+              height: 10px;
+            }
+          }
+        }
+
+        .front {
+          background: $mid-dark-color;
+          flex-direction: column;
+          gap: 24px;
+
+          .column-entry__image {
+            width: 100px;
+            height: 100px;
+          }
+        }
+
+        .back {
+          align-items: flex-start;
+          background: $mid-dark-color;
+          transform: rotateY(180deg);
+          overflow: auto;
+          /* Works on Webkit-based browsers (Chrome, Edge, Safari) */
+          &::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+          }
+
+          &::-webkit-scrollbar-thumb {
+            background: $primary-color;
+            border-radius: 10px;
+          }
+
+          &::-webkit-scrollbar-thumb:hover {
+            background: rgba(0, 0, 0, 0.4);
+          }
+
+          &::-webkit-scrollbar-track {
+            background: transparent;
+          }
+
+          /* Firefox scrollbar */
+          * {
+            scrollbar-width: thin;
+            scrollbar-color: rgba(0, 0, 0, 0.3) transparent;
+          }
+        }
+      }
+    }
+  }
+
+  .ctas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px 45px;
+    margin-top: 40px;
+  }
+}

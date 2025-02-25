@@ -1,0 +1,48 @@
+{% if options.sectionAnchor %}
+    <span class="anchor-element" {{options.sectionAnchor ? 'id="'~ options.sectionAnchor ~'"'}} {{options.sectionAnchorLabel ? 'data-label="'~ options.sectionAnchorLabel ~'"'}}></span>
+{% endif %}
+<flynt-component name="BlockFlipCards" class="componentSpacing {{fn('disablePadding',options.padding)}}">
+    <div class="container">
+        {% set maxColumns = options.maxColumns ?? 'two' %}
+        {% if sectionIntro %}
+            <div class="block-content">
+                {{ sectionIntro }}
+            </div>
+        {% endif %}
+        <div class="columns-grid">
+            {% for column in columns %}
+                <div class="columns-grid__column">
+
+                    {% for entry in column.entries %}
+                        <div class="column-entry" style="flex: {{ entry.ratio | default(1) }}">
+                            <div class="content">
+                                <div class="front">
+                                    <button class="toggle"><img class="close-icon" src="{{theme.link}}/assets/images/close-icon.svg" alt="nav-toggle icon"></button>
+                                    <div class="column-entry__image">
+                                        <img src="{{ entry.image.src }}" alt="{{ entry.image.alt }}">
+                                    </div>
+                                    <h3 class="column-entry__title">{{ entry.title }}</h3>
+                                </div>
+                                <div class="back">
+                                    <button class="toggle">-</button>
+                                    <div class="column-entry__content">
+                                        {{ entry.content }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+
+                </div>
+            {% endfor %}
+        </div>
+        <div class="ctas {{centerContent ? 'center-content'}}">
+            {% for btn in ctaLinks %}
+                <a class="button {{btn.style}}" href="{{ btn.cta.url }}" {{btn.cta.target == '_blank' ? 'target="_blank" rel="noopener noreferrer"' }}>
+                    {{ btn.cta.title }}
+                    <i class="fa-regular fa-chevrons-right"></i>
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+</flynt-component>
