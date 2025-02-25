@@ -2,19 +2,19 @@
 
 // For flynt block element
 flynt-component {
-  display:block;
+  display: block;
 }
 
 html {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  background-color: white;
+  background-color: $dark-color;
 }
 
 *::selection {
   background: rgba($primary-color, 0.8);
-  color: white;
+  color: $dark-color;
 }
 
 *,
@@ -28,13 +28,13 @@ body {
   font-weight: normal;
   font-family: $text-font-stack;
   font-size: 16px;
-  line-height: 1.4em;
+  line-height: 1.5em;
   color: $text-color;
   display: flex;
   flex-direction: column;
-  margin:0;
+  margin: 0;
   @media screen and (min-width: 768px) {
-    font-size: 20px;
+    font-size: 18px;
   }
 }
 
@@ -51,41 +51,59 @@ h4,
 h5,
 h6 {
   display: block;
-  margin: 0 0 20px;
+  margin: 0 0 24px;
   padding: 0;
   font-family: $heading-font-stack;
-  font-weight: 100;
-  line-height: 1.2em;
+  font-weight: 700;
+  line-height: 1em;
 }
 
 .h1,
 h1 {
-  font-size: 3em;
+  font-size: 36px;
+  @media screen and (min-width: 768px) {
+    font-size: 40px;
+  }
 }
 
 .h2,
 h2 {
-  font-size: 2em;
+  font-size: 32px;
+  @media screen and (min-width: 768px) {
+    font-size: 36px;
+  }
 }
 
 .h3,
 h3 {
-  font-size: 1.7em;
+  font-size: 28px;
+  @media screen and (min-width: 768px) {
+    font-size: 32px;
+  }
 }
 
 .h4,
 h4 {
-  font-size: 1.5em;
+  font-size: 24px;
+  @media screen and (min-width: 768px) {
+    font-size: 28px;
+  }
 }
 
 .h5,
 h5 {
-  font-size: 1.3em;
+  font-size: 24px;
+  @media screen and (min-width: 768px) {
+    font-size: 24px;
+  }
 }
 
 .h6,
 h6 {
-  font-size: 1.2em;
+  font-size: 18px;
+  @media screen and (min-width: 768px) {
+    font-size: 24px;
+  }
 }
 
 img {
@@ -99,26 +117,31 @@ a {
   color: $primary-color;
 
   &[disabled] {
-    filter:grayscale(100%);
-    opacity:0.75;
+    filter: grayscale(100%);
+    opacity: 0.75;
     pointer-events: none;
-    text-decoration:none;
+    text-decoration: none;
   }
-
+  &.invert {
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
   &:hover {
-    background:rgba($primary-color,0.1);
+    text-decoration: none;
   }
 
   &.white {
-    color: $light-color;
-    font-weight: 100;   
+    color: white;
     &:hover {
+      text-decoration: none;
     }
   }
 }
 
 p {
-  margin: 0 0 20px;
+  margin: 0 0 24px;
 }
 
 hr {
@@ -138,16 +161,15 @@ em {
 
 blockquote {
   font-style: italic;
-  padding: 20px;
-  margin-bottom: 20px;
-  background: $light-color;
+  padding: 24px;
+  margin-bottom: 24px;
 }
 
 ul {
   padding-left: 32px;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
   li {
-    margin-bottom: 5px;
+    margin-bottom: 8px;
   }
 }
 
@@ -165,7 +187,7 @@ table {
   border-spacing: 0;
   td,
   th {
-    padding: 10px;
+    padding: 8px;
     border-bottom: $border;
     border-right: $border;
   }
