@@ -3,7 +3,7 @@
 {{ renderComponent('LayoutNoticeBanner') }}
   <div class="wrap {{ options.containerSize }}">
     <section class="left">
-      <button class="nav-toggle">=</button>
+      <button class="nav-toggle"> <img class="toggle-icon" src="{{theme.link}}/assets/images/nav-toggle-icon.svg" alt="nav-toggle icon"> </button>
       <a href="{{ site.link }}" class="brand">
        {{logo}}
       </a>
@@ -11,7 +11,8 @@
 
     <section class="main-links">
       <div class="top">
-        <button class="close">X</button>
+      {{logo}}
+        <button class="close"><img class="close-icon" src="{{theme.link}}/assets/images/close-icon.svg" alt="nav-toggle icon"></button>
       </div>
 
       <ul class="top-level">
@@ -123,7 +124,7 @@
     {% if menuExtras.items > 0 %}
       <section class="right">
         {% for item in menuExtras.items %}
-          <a class="{{ item.classes|join(' ') }}"
+          <a class="button {{ item.classes|join(' ') }}"
             href="{{ item.link }}"
             {{
             item.target == '_blank'

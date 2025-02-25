@@ -1,0 +1,26 @@
+button {
+    cursor: pointer;
+}
+.button {
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    background: $primary-color;
+    color:$dark-color;
+    padding:12px 32px;
+    font-weight:bold;
+    border-radius:999px;
+    border:none;
+    text-decoration: none;
+    transition: $transition;
+    &:hover {
+        transform:translateY(-2px);
+    }
+    &:active {
+        transform:translateY(1px);
+    }
+    &[disabled] {
+        filter: grayscale(100%);
+        pointer-events: none;
+    }
+}
