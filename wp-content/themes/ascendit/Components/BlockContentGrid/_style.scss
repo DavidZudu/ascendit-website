@@ -1,0 +1,66 @@
+[name="BlockContentGrid"] {
+  .link-grid {
+    display: grid;
+    gap: 32px;
+
+    @mixin grid-template($columns) {
+      grid-template-columns: repeat($columns, 1fr);
+    }
+
+    &--one {
+      @include grid-template(1);
+    }
+
+    &--two {
+      @include grid-template(2);
+
+      @media (min-width: 768px) {
+        @include grid-template(2);
+      }
+    }
+
+    &--three {
+      @include grid-template(1);
+
+      @media (min-width: 768px) {
+        @include grid-template(2);
+      }
+
+      @media (min-width: 1024px) {
+        @include grid-template(3);
+      }
+    }
+
+    &--four {
+      @include grid-template(1);
+
+      @media (min-width: 768px) {
+        @include grid-template(2);
+      }
+
+      @media (min-width: 1024px) {
+        @include grid-template(3);
+      }
+
+      @media (min-width: 1200px) {
+        @include grid-template(4);
+      }
+    }
+  }
+  .link-grid__item {
+    background:$mid-dark-color;
+    padding:72px;
+    border-radius:8px;
+    text-align: center;
+    .link-grid__image {
+      max-width:100px;
+      max-height:100px;
+      margin:0 auto 24px;
+    }
+    .link-grid__content{
+      *:last-child{
+        margin-bottom:0;
+      }
+    }
+  }
+}
