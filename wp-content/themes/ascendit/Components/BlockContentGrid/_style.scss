@@ -63,4 +63,11 @@
       }
     }
   }
+  .ctas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px 45px;
+    margin-top:40px;
+  }
 }

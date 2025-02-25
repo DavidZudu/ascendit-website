@@ -18,6 +18,7 @@ add_action('Flynt/afterRegisterComponents', function () {
                     Components\LayoutHomeHeader\getACFLayout(),
                     Components\BlockTitleBar\getACFLayout(),
                     Components\BlockContentGrid\getACFLayout(),
+                    Components\BlockContentCircles\getACFLayout(),
                     Components\BlockPageNav\getACFLayout(),
                     Components\BlockAccordions\getACFLayout(),
                     Components\BlockSplitContent\getACFLayout(),

@@ -119,21 +119,21 @@ function setCTAs()
                     'width'=>'60'
                 ]
             ],
-            [
-                'label' => __('Button Style', 'flynt'),
-                'name' => 'style',
-                'type' => 'radio',
-                'layout' => 'horizontal',
-                'default_value' => '',
-                'choices' => [
-                    '' => 'Pink',
-                    'purple' => 'Purple',
-                    'white' => 'White',
-                ],
-                'wrapper'=> [
-                    'width'=>'40'
-                ]
-            ],
+            // [
+            //     'label' => __('Button Style', 'flynt'),
+            //     'name' => 'style',
+            //     'type' => 'radio',
+            //     'layout' => 'horizontal',
+            //     'default_value' => '',
+            //     'choices' => [
+            //         '' => 'Pink',
+            //         'purple' => 'Purple',
+            //         'white' => 'White',
+            //     ],
+            //     'wrapper'=> [
+            //         'width'=>'40'
+            //     ]
+            // ],
         ],
     ];
 }

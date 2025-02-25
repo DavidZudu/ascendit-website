@@ -1,0 +1,40 @@
+{% if options.sectionAnchor %}
+    <span class="anchor-element" {{options.sectionAnchor ? 'id="'~ options.sectionAnchor ~'"'}} {{options.sectionAnchorLabel ? 'data-label="'~ options.sectionAnchorLabel ~'"'}}></span>
+{% endif %}
+<flynt-component name="BlockContentCircles" class="componentSpacing {{fn('disablePadding',options.padding)}}">
+    <div class="container">
+        {% set maxColumns = options.maxColumns ?? 'two' %}
+         {% if sectionIntro %}
+            <div class="block-content">
+                {{ sectionIntro }}
+            </div>
+        {% endif %}
+         {% if entries %}
+            <div class="link-grid link-grid--{{ maxColumns }}">
+                {% for entry in entries %}
+                    <div class="link-grid__item">
+                        {% if entry.image %}
+                            <div class="link-grid__image">
+                                <img src="{{ entry.image.src }}" alt="{{ entry.image.alt }}">
+                            </div>
+                        {% endif %}
+                        {% if entry.content %}
+                            <div class="link-grid__content">
+                                {{ entry.content }}
+                            </div>
+                        {% endif %}
+                        <img class="divider" src="{{theme.link}}/assets/images/divider.svg" alt="nav-toggle icon">
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+        <div class="ctas {{centerContent ? 'center-content'}}">
+            {% for btn in ctaLinks %}
+                <a class="button {{btn.style}}" href="{{ btn.cta.url }}" {{btn.cta.target == '_blank' ? 'target="_blank" rel="noopener noreferrer"' }}>
+                    {{ btn.cta.title }}
+                    <i class="fa-regular fa-chevrons-right"></i>
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+</flynt-component>
