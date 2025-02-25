@@ -1,0 +1,22 @@
+  {% if options.sectionAnchor %}<span class="anchor-element" {{options.sectionAnchor ? 'id="'~ options.sectionAnchor ~'"'}} {{options.sectionAnchorLabel ? 'data-label="'~ options.sectionAnchorLabel ~'"'}}></span>{% endif %}
+ <flynt-component name="LayoutHomeHeader"   class="componentSpacing {{options.backgroundColor}} {{options.paddingSize}} {{fn('disablePadding',options.padding)}}">
+  <div class="overlay-radial-gradient"></div>
+  <div class="{{options.containerSize}}">
+   <article class="image {{imagePosition}}">
+      <img loading="lazy"
+      class=""
+      src="{{ image.src }}"
+      sizes="100vw"
+      srcset="{{ image.srcset }}"
+      alt="{{ image.alt }}" />
+    </article>
+    <article class="content">
+      {{content}}
+      <div class="ctas">
+        {% for btn in ctaLinks %}
+          <a href="{{btn.cta.url}}" class="button {{btn.style}}">{{btn.cta.title}}</a>
+        {% endfor %}
+      </div>      
+    </article>
+  </div>
+</flynt-component>

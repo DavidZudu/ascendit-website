@@ -84,6 +84,16 @@ $sides: (top, bottom, left, right, all);
   }
 }
 
+.overlay-radial-gradient {
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  background: radial-gradient(171.14% 171.14% at 45.29% -8.46%, #00706E 0%, #003045 33%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+
+}
+
 // Small caps text display
 .small-caps {
   text-transform: uppercase;

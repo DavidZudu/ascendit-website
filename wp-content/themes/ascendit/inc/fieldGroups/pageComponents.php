@@ -15,6 +15,7 @@ add_action('Flynt/afterRegisterComponents', function () {
                 'type' => 'flexible_content',
                 'button_label' => __('Add Component', 'flynt'),
                 'layouts' => [
+                    Components\LayoutHomeHeader\getACFLayout(),
                     Components\BlockTitleBar\getACFLayout(),
                     Components\BlockPageNav\getACFLayout(),
                     Components\BlockAccordions\getACFLayout(),
