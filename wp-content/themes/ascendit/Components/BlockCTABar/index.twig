@@ -1,0 +1,16 @@
+  {% if options.sectionAnchor %}<span class="anchor-element" {{options.sectionAnchor ? 'id="'~ options.sectionAnchor ~'"'}} {{options.sectionAnchorLabel ? 'data-label="'~ options.sectionAnchorLabel ~'"'}}></span>{% endif %}
+ <flynt-component name="BlockCTABar"   class="{{options.backgroundColor}} {{options.paddingSize}} {{fn('disablePadding',options.padding)}}">
+  {{fn('getBackgroundPattern',options.backgroundPattern)}}
+  <div class="{{options.containerSize}}">
+    <div class="wrap">
+      <div class="intro">
+      {{sectionIntro}}
+      </div>
+      <div class="ctas">
+        {% for btn in ctaLinks %}
+          <a href="{{btn.cta.url}}" class="button {{btn.style}}">{{btn.cta.title}}</a>
+        {% endfor %}
+      </div>   
+    </div>
+  </div>
+</flynt-component>

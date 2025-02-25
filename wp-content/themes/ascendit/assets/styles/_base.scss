@@ -1,0 +1,172 @@
+/* BASIC STYLES */
+
+// For flynt block element
+flynt-component {
+  display:block;
+}
+
+html {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background-color: white;
+}
+
+*::selection {
+  background: rgba($primary-color, 0.8);
+  color: white;
+}
+
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  font-weight: normal;
+  font-family: $text-font-stack;
+  font-size: 16px;
+  line-height: 1.4em;
+  color: $text-color;
+  display: flex;
+  flex-direction: column;
+  margin:0;
+  @media screen and (min-width: 768px) {
+    font-size: 20px;
+  }
+}
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  display: block;
+  margin: 0 0 20px;
+  padding: 0;
+  font-family: $heading-font-stack;
+  font-weight: 100;
+  line-height: 1.2em;
+}
+
+.h1,
+h1 {
+  font-size: 3em;
+}
+
+.h2,
+h2 {
+  font-size: 2em;
+}
+
+.h3,
+h3 {
+  font-size: 1.7em;
+}
+
+.h4,
+h4 {
+  font-size: 1.5em;
+}
+
+.h5,
+h5 {
+  font-size: 1.3em;
+}
+
+.h6,
+h6 {
+  font-size: 1.2em;
+}
+
+img {
+  max-height: 100%;
+  max-width: 100%;
+  height: auto;
+  width: auto;
+}
+
+a {
+  color: $primary-color;
+
+  &[disabled] {
+    filter:grayscale(100%);
+    opacity:0.75;
+    pointer-events: none;
+    text-decoration:none;
+  }
+
+  &:hover {
+    background:rgba($primary-color,0.1);
+  }
+
+  &.white {
+    color: $light-color;
+    font-weight: 100;   
+    &:hover {
+    }
+  }
+}
+
+p {
+  margin: 0 0 20px;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid rgba(black, 0.1);
+  margin: 40px 0;
+}
+
+strong {
+  font-weight: bold;
+  color: $dark-color;
+}
+
+em {
+  font-style: italic;
+}
+
+blockquote {
+  font-style: italic;
+  padding: 20px;
+  margin-bottom: 20px;
+  background: $light-color;
+}
+
+ul {
+  padding-left: 32px;
+  margin-bottom: 20px;
+  li {
+    margin-bottom: 5px;
+  }
+}
+
+main {
+  position: relative;
+}
+
+section {
+  position: relative;
+}
+
+table {
+  border-top: $border;
+  border-left: $border;
+  border-spacing: 0;
+  td,
+  th {
+    padding: 10px;
+    border-bottom: $border;
+    border-right: $border;
+  }
+}

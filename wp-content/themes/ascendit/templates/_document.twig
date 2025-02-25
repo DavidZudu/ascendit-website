@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html class="html {{ body_class }}" {{ site.language_attributes }}>
+  <head>
+    {% set snippets = fn('getCodeSnippets') %}
+    {{snippets.headCode}}  
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="alternate" type="application/rss+xml" title="{{site.title}}">
+    {{ function('wp_head') }}
+  </head>
+  <body>
+  
+    {{snippets.bodyStartCode}}
+    {{ function('wp_body_open') }}
+   
+    {% block layout %}      
+      {% block nav %}
+        {{ renderComponent("NavigationJs") }}
+      {% endblock %}
+       
+      <main id="mainContent" class="mainContent">
+        {% if function('post_password_required') %}
+          {{ function('get_the_password_form') }}
+        {% else %}
+          {% block content %}
+            No <code>{{ '{% block content %}' }}</code> defined for this template.
+          {% endblock %}
+        {% endif %}
+      </main>
+      
+      {% block footer %}
+        
+      {% endblock %}
+      
+      </div>
+    {% endblock %}
+    <div class="wpFooter">
+      {# {{ function('wp_footer') }} #}
+    </div>
+    {{snippets.bodyEndCode}}
+  </body>
+</html>

@@ -1,0 +1,9 @@
+ {% if options.sectionAnchor %}<span class="anchor-element" {{options.sectionAnchor ? 'id="'~ options.sectionAnchor ~'"'}} {{options.sectionAnchorLabel ? 'data-label="'~ options.sectionAnchorLabel ~'"'}}></span>{% endif %}
+ <flynt-component name="BlockWysiwyg"   class="{{options.backgroundColor}} {{options.paddingSize}} {{fn('disablePadding',options.padding)}}">
+  {{fn('getBackgroundPattern',options.backgroundPattern)}}
+  <div class="{{options.containerSize}}">
+    <div class="content" >
+      {{ contentHtml }}
+    </div>
+  </div>
+</flynt-component>

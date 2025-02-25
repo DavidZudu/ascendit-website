@@ -1,0 +1,10 @@
+ {% if options.sectionAnchor %}<span class="anchor-element" {{options.sectionAnchor ? 'id="'~ options.sectionAnchor ~'"'}} {{options.sectionAnchorLabel ? 'data-label="'~ options.sectionAnchorLabel ~'"'}}></span>{% endif %}
+ <flynt-component name="BlockTitleBar"   class="{{options.backgroundColor}} {{options.paddingSize}} {{fn('disablePadding',options.padding)}}">
+  {{fn('getBackgroundPattern',options.backgroundPattern)}}
+  <div class="{{options.containerSize}}">
+    <div class="content" >
+      <h2>{{titleText}}</h2>
+      <hr>
+    </div>
+  </div>
+</flynt-component>

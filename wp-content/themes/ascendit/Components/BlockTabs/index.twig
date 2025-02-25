@@ -1,0 +1,30 @@
+  {% if options.sectionAnchor %}<span class="anchor-element" {{options.sectionAnchor ? 'id="'~ options.sectionAnchor ~'"'}} {{options.sectionAnchorLabel ? 'data-label="'~ options.sectionAnchorLabel ~'"'}}></span>{% endif %}
+ <flynt-component name="BlockTabs"   class="{{options.backgroundColor}} {{options.paddingSize}} {{fn('disablePadding',options.padding)}}">
+  {{fn('getBackgroundPattern',options.backgroundPattern)}}
+  <div class="{{options.containerSize}}">
+  <div class="intro">
+      {{sectionIntro}}
+      </div>
+    <section class="tab-section content-wrap">  
+      <nav class="tab">
+      {% for tab in tabs %}
+        <button class="tablinks {{loop.first ? 'active'}}" data-tab="{{function('sanitize_title',tab.title)}}">{{tab.title}}</button>
+      {% endfor %}        
+      </nav>
+      <select class="tab-select">
+        {% for tab in tabs %}
+          <option value="{{function('sanitize_title',tab.title)}}">{{tab.title}}</option>
+        {% endfor %}  
+      </select>
+
+      <!-- Tab content -->
+    
+
+      {% for tab in tabs %}
+         <article id="{{function('sanitize_title',tab.title)}}" class="tabcontent {{loop.first ? 'active'}}">
+          {{tab.content}}
+        </article>
+        {% endfor %}      
+    </section>
+  </div>
+</flynt-component>
