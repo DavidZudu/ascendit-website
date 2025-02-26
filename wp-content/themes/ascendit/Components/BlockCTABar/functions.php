@@ -29,6 +29,11 @@ function getACFLayout()
                 'endpoint' => 0,
             ],
             FieldVariables\setIntro(),
+            [
+            'label' => __('Emoji', 'flynt'),
+            'name' => 'emoji',
+            'type' => 'text',
+            ],
             FieldVariables\setCtas(),
             
             [
