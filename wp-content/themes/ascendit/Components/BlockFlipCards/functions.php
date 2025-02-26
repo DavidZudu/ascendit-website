@@ -27,33 +27,56 @@ function getACFLayout()
             ],
             FieldVariables\setIntro(),
             [
-                'label'      => __('Columns', 'flynt'),
-                'name'       => 'columns',
-                'type'       => 'repeater',
-                'button_label'=> __('Add Column', 'flynt'), // Custom button label
-                'sub_fields' => [
+                'label'        => __('Columns', 'flynt'),
+                'name'         => 'columns',
+                'type'         => 'repeater',
+                'button_label' => __('Add Column', 'flynt'), // Custom button label
+                'sub_fields'   => [
                     [
-                        'label'      => __('Entries', 'flynt'),
-                        'name'       => 'entries',
-                        'type'       => 'repeater',
-                        'button_label'=> __('Add Entry', 'flynt'), // Custom button label
-                        'layout' => 'block',
-                        'sub_fields' => [
+                        'label'        => __('Entries', 'flynt'),
+                        'name'         => 'entries',
+                        'type'         => 'repeater',
+                        'button_label' => __('Add Entry', 'flynt'), // Custom button label
+                        'layout'       => 'block',
+                        'sub_fields'   => [
                             [
-                            'label' => __('Ratio', 'flynt'),
-                            'name' => 'ratio',
-                            'type' => 'number',
+                                'label'   => __('Title', 'flynt'),
+                                'name'    => 'title',
+                                'type'    => 'text',
+                                'wrapper' => [
+                                    'width' => '20',
+                                ],
                             ],
                             [
-                                'label' => __('Title', 'flynt'),
-                                'name'  => 'title',
-                                'type'  => 'text',
+                                'label'   => __('Emoji', 'flynt'),
+                                'name'    => 'emoji',
+                                'type'    => 'text',
+                                'wrapper' => [
+                                    'width' => '20',
+                                ],
                             ],
                             [
-                                'label' => __('Image', 'flynt'),
-                                'name'  => 'image',
-                                'type'  => 'image',
+                                'label'   => __('Ratio', 'flynt'),
+                                'name'    => 'ratio',
+                                'type'    => 'number',
+                                'wrapper' => [
+                                    'width' => '20',
+                                ],
                             ],
+                            [
+                                'label'   => __('Colour', 'flynt'),
+                                'name'    => 'colour',
+                                'type'    => 'select',
+                                'choices' => [
+                                    'normal' => 'Normal',
+                                    'light'  => 'Light',
+                                    'dark'   => 'Dark',
+                                ],
+                                'wrapper' => [
+                                    'width' => '20',
+                                ],
+                            ],
+
                             [
                                 'label' => __('Content', 'flynt'),
                                 'name'  => 'content',

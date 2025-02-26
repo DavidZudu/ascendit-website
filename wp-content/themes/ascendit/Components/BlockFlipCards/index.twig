@@ -14,16 +14,17 @@
                 <div class="columns-grid__column">
 
                     {% for entry in column.entries %}
-                        <div class="column-entry" style="flex: {{ entry.ratio | default(1) }}">
+                        <div class="column-entry " style="flex: {{ entry.ratio | default(1) }}">
                             <div class="content">
-                                <div class="front">
+                                <div class="front {{entry.colour}}">
                                     <button class="toggle"><img class="close-icon" src="{{theme.link}}/assets/images/close-icon.svg" alt="nav-toggle icon"></button>
                                     <div class="column-entry__image">
-                                        <img src="{{ entry.image.src }}" alt="{{ entry.image.alt }}">
+                                        <span class="emoji-cover">{{entry.emoji}}</span>
+                                        {# <img src="{{ entry.image.src }}" alt="{{ entry.image.alt }}"> #}
                                     </div>
-                                    <h3 class="column-entry__title">{{ entry.title }}</h3>
+                                    <h3 class="column-entry__title mb0">{{ entry.title }}</h3>
                                 </div>
-                                <div class="back">
+                                <div class="back {{entry.colour}}">
                                     <button class="toggle">-</button>
                                     <div class="column-entry__content">
                                         {{ entry.content }}

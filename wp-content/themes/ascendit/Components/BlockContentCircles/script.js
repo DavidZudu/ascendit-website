@@ -28,5 +28,5 @@ function checkDividers() {
 }
 
 // Run on load and resize
-window.addEventListener("load", checkDividers);
+checkDividers();
 window.addEventListener("resize", checkDividers);
