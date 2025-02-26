@@ -1,21 +1,29 @@
-  {% if options.sectionAnchor %}<span class="anchor-element" {{options.sectionAnchor ? 'id="'~ options.sectionAnchor ~'"'}} {{options.sectionAnchorLabel ? 'data-label="'~ options.sectionAnchorLabel ~'"'}}></span>{% endif %}
- <flynt-component name="BlockSplitContent"   class="{{options.backgroundColor}} {{options.paddingSize}} {{fn('disablePadding',options.padding)}}">
-  <div class="{{options.containerSize}}">
-   <article class="image {{imagePosition}}">
-      <img loading="lazy"
-      class="img-bg-center-cover hero-bg"
-      src="{{ image.src }}"
-      sizes="100vw"
-      srcset="{{ image.srcset }}"
-      alt="{{ image.alt }}" />
-    </article>
-    <article class="content">
-      {{content}}
-      <div class="ctas">
-        {% for btn in ctaLinks %}
-          <a href="{{btn.cta.url}}" class="button {{btn.style}}">{{btn.cta.title}}</a>
-        {% endfor %}
-      </div>      
-    </article>
-  </div>
+{% if options.sectionAnchor %}
+    <span class="anchor-element" {{options.sectionAnchor ? 'id="'~ options.sectionAnchor ~'"'}} {{options.sectionAnchorLabel ? 'data-label="'~ options.sectionAnchorLabel ~'"'}}></span>
+{% endif %}
+<flynt-component name="BlockSplitContent" class="componentSpacing    {{options.backgroundColor}} {{options.paddingSize}} {{fn('disablePadding',options.padding)}}">
+    <div class="{{options.containerSize}}">
+        <article
+            class="image {{imagePosition}}">
+            {# <img loading="lazy"
+                  class="img-bg-center-cover hero-bg"
+                  src="{{ image.src }}"
+                  sizes="100vw"
+                  srcset="{{ image.srcset }}"
+                  alt="{{ image.alt }}" /> #}
+            {% for item in emoji %}
+                <div class="emoji-wrap">
+                    <span class="emoji-grow">{{item}}</span>
+                </div>
+            {% endfor %}
+        </article>
+        <article class="content">
+            {{content}}
+            <div class="ctas">
+                {% for btn in ctaLinks %}
+                    <a href="{{btn.cta.url}}" class="button {{btn.style}}">{{btn.cta.title}}</a>
+                {% endfor %}
+            </div>
+        </article>
+    </div>
 </flynt-component>

@@ -27,12 +27,14 @@
         position: relative;
         text-align: right;
         height:auto;
-        .emoji-grow {
-          display: inline-block;
-          font-size: 72px;
-          line-height: 1em;
-        }
+        
       }
     }
   }
+}
+
+.emoji-grow {
+  display: inline-block;
+  font-size: 72px;
+  line-height: 1em;
 }

@@ -6,6 +6,8 @@ use Flynt\FieldVariables;
 
 add_filter('Flynt/addComponentData?name=BlockSplitContent', function ($data) {
      
+
+     $data['emoji']  = preg_split('//u', $data['emoji'] , -1, PREG_SPLIT_NO_EMPTY);
     return $data;
 
 });
@@ -24,14 +26,19 @@ function getACFLayout()
                 'endpoint' => 0,
             ],
             
+            // [
+            //     'label' => __('Image', 'flynt'),
+            //     'name' => 'image',
+            //     'type' => 'image',                
+            //     'preview_size' => 'thumbnail',
+            //     'wrapper' => [
+            //         'width' => '50',
+            //     ]
+            // ],
             [
-                'label' => __('Image', 'flynt'),
-                'name' => 'image',
-                'type' => 'image',                
-                'preview_size' => 'thumbnail',
-                'wrapper' => [
-                    'width' => '50',
-                ]
+            'label' => __('Emojis', 'flynt'),
+            'name' => 'emoji',
+            'type' => 'text',
             ],
             [
                 'label' => __('Image Position', 'flynt'),
@@ -66,7 +73,7 @@ function getACFLayout()
                 'sub_fields' => [
                     FieldVariables\setContainerSize(),
                     FieldVariables\setBackgroundColor(),
-                    FieldVariables\setPadding([]),
+                    FieldVariables\setPadding(),
                     FieldVariables\setPaddingSize(),
                     FieldVariables\setBackgroundPattern(),
                     FieldVariables\setAnchor()

@@ -1,7 +1,7 @@
  {% if options.sectionAnchor %}<span class="anchor-element" {{options.sectionAnchor ? 'id="'~ options.sectionAnchor ~'"'}} {{options.sectionAnchorLabel ? 'data-label="'~ options.sectionAnchorLabel ~'"'}}></span>{% endif %}
  <flynt-component name="NavigationJs">
 {{ renderComponent('LayoutNoticeBanner') }}
-  <div class="wrap {{ options.containerSize }}">
+  <div class="wrap container lg">
     <section class="left">
       <button class="nav-toggle"> <img class="toggle-icon" src="{{theme.link}}/assets/images/nav-toggle-icon.svg" alt="nav-toggle icon"> </button>
       <a href="{{ site.link }}" class="brand">

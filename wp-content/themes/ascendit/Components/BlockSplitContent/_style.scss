@@ -2,17 +2,41 @@
     > div {
       display:flex;
       flex-direction:column;
+      gap:40px;
       @media screen and (min-width:992px) {
         flex-direction:row;
-        gap:40px;
+        gap:80px;
+      }
+      @media screen and (min-width:992px) {
+        flex-direction:row;
+        gap:120px;
       }
       .image {
-        position:relative;
-        padding-top:56.25%;
+        position:relative;        
+        height:200px;
         margin-bottom:20px;
         overflow:hidden;
+        background: linear-gradient(to bottom, $secondary-color, $tertiary-color);
+        border-radius:32px;
+        display:flex;
+        flex-direction:row;
+        gap:32px;
+        padding:24px;
+        min-width:0;
+        .emoji-wrap {
+          display:flex;
+          align-items:center;
+          justify-content:flex-start;
+          flex:1;
+          &:nth-of-type(even) {
+            justify-content:flex-end;
+          }
+        }
+        
         @media screen and (min-width:992px) {
-          padding:0;
+          height:auto;
+          flex-direction:column;
+          padding:40px;
           margin-bottom:0;
           flex:0 1 50%;      
           &.image-right {
@@ -29,7 +53,7 @@
           }      
         }
         @media screen and (min-width:992px) {
-          flex:0 1 50%;
+          flex:0 1 66%;
           padding:40px 0;
         }
       }

@@ -22,7 +22,7 @@ add_action('Flynt/afterRegisterComponents', function () {
                     Components\BlockFlipCards\getACFLayout(),
                     // Components\BlockPageNav\getACFLayout(),
                     // Components\BlockAccordions\getACFLayout(),
-                    // Components\BlockSplitContent\getACFLayout(),
+                    Components\BlockSplitContent\getACFLayout(),
                     // Components\BlockWysiwyg\getACFLayout(),
                     Components\BlockCTABar\getACFLayout(),
                     // Components\BlockFullImageBackground\getACFLayout(),

@@ -5,8 +5,6 @@
         
         const parentWidth = parent.clientWidth;
         const parentHeight = parent.clientHeight;
-        console.log("parentWidth: ", parentWidth);
-        console.log("parentHeight: ", parentHeight);
         let fontSize = 10; // Start with a small font size
 
         element.style.fontSize = fontSize + 'px';
@@ -39,6 +37,6 @@ window.onload = () => {
 };
 
 window.addEventListener("resize", () => {
-  const textElements = document.querySelectorAll('.emoji-cover');
+  const textElements = document.querySelectorAll('.emoji-grow');
   fitTextToParent(Array.from(textElements));
 });

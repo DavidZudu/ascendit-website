@@ -123,7 +123,7 @@ $sides: (top, bottom, left, right, all);
 .container {
   width: 100%;
   margin: auto;
-  max-width: 1400px;
+  max-width: 1200px;
   padding-left: 24px;
   padding-right: 24px;
   @media screen and (min-width:768px) {
@@ -131,10 +131,10 @@ $sides: (top, bottom, left, right, all);
     padding-right: 40px;
   }
   &.sm {
-    max-width: 1000px;
+    max-width: 900px;
   }
   &.lg {
-    max-width: 1800px;
+    max-width: 1600px;
   }    
 }
 
