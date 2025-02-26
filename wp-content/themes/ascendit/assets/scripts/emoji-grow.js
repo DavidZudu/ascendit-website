@@ -5,12 +5,12 @@
         
         const parentWidth = parent.clientWidth;
         const parentHeight = parent.clientHeight;
-        console.log(parentWidth, parentHeight);
+        
         let fontSize = 10; // Start with a small font size
 
         element.style.fontSize = fontSize + 'px';
         element.style.whiteSpace = 'nowrap'; // Prevent wrapping
-
+        
         while (fontSize < maxFontSize) {
             element.style.fontSize = fontSize + 'px';
             const elementWidth = element.scrollWidth;
