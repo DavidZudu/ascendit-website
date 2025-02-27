@@ -30,7 +30,6 @@
             {% for btn in ctaLinks %}
                 <a class="button {{btn.style}}" href="{{ btn.cta.url }}" {{btn.cta.target == '_blank' ? 'target="_blank" rel="noopener noreferrer"' }}>
                     {{ btn.cta.title }}
-                    <i class="fa-regular fa-chevrons-right"></i>
                 </a>
             {% endfor %}
         </div>

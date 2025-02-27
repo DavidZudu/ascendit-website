@@ -1,0 +1,46 @@
+<flynt-component name="LayoutFooter" class="componentSpacing">
+    
+    <div class="container lg">
+        <div class="contact">
+            {% if form %}
+                {{ form | shortcode }}{% endif %}
+                {% if contactOptions.socials %}
+                    <div class="socials">
+                        {% for social in contactOptions.socials %}
+                            <a class="" href="{{ social.link.url }}" {{ social.link.target == '_blank' ? 'target="_blank" rel="noopener noreferrer"' }} title="{{social.link.title}}">
+                                {{ social.icon }}
+                            </a>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+            {% if footerOptions.linkColumns %}
+                <div class="links">
+                    <div class="column-wrap">
+                        {% for column in footerOptions.linkColumns %}
+                            <div class="column">
+                                {% for link in column.links %}
+                                    <a class="{{link.makeButton ? 'button sm mb16'}}" href="{{ link.link.url }}">
+                                        {{ link.link.title }}{{link.makeButton ? '<i class="fa-regular fa-chevrons-right"></i>'}}
+                                    </a>
+                                {% endfor %}
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endif %}
+            <div class="copyright">           
+                {{footerOptions.copyrightText}}
+                <nav
+                    class="bottom-nav">{# {% if menuFooterBottom %}
+                                                                    {% for item in menuFooterBottom.items %}
+                                                                        <a class="{{ item.classes|join(' ') }}" href="{{ item.link }}" {{ item.target == '_blank' ? 'target="_blank" rel="noopener noreferrer"' }}>
+                                                                            {{ item.icon ? '<i class="' ~ item.icon ~ '"></i>' : item.title }}
+                                                                        </a>
+                                                                    {% endfor %}
+                                                                {% endif %} #}
+                </nav>
+                 <img class="arrow-image" src="{{theme.link}}/assets/images/footer-arrow.png" alt="arrow image">
+            </div>
+        </div>
+    </flynt-component>

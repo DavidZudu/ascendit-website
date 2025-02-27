@@ -29,13 +29,14 @@
       </main>
       
       {% block footer %}
-        
+        {{ renderComponent("LayoutFooter") }}
       {% endblock %}
       
       </div>
     {% endblock %}
     <div class="wpFooter">
-      {# {{ function('wp_footer') }} #}
+      {{ function('wp_footer') }}
+      <script src="https://kit.fontawesome.com/df3cdd5667.js" crossorigin="anonymous"></script>
     </div>
     {{snippets.bodyEndCode}}
   </body>
