@@ -1,64 +1,79 @@
 [name="BlockAccordions"] {
+  > div {
+    display: flex;
+    flex-direction: column;
+    gap:24px;
+    @media screen and (min-width: 992px) {
+      flex-direction: row;
+      > div {
+        flex: 1;
+      }
+    }
+  }
 }
 
 .dc-accordion {
-    margin-bottom:20px;
-    transition:0.2s;
-    counter-increment:step-counter;
-    &:hover {
-      background:$light-color;
-      summary{
-        &:before {
-          color:$primary-color;
-        }
-      }
-    }
+  margin-bottom: 20px;
+  transition: 0.2s;
+  counter-increment: step-counter;
+  background: $mid-dark-color;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: $transition;
+  &:hover {
     summary {
-      position: relative;
-      font-size: 1.5em;
-      list-style: none;    
-      cursor: pointer;
-      padding:30px;
-      padding-right: 80px;
-      color:$primary-color;
+      background: $teal;
       &:before {
-        position: absolute;
-        content: "+";
-        right: 30px;
-        transition: all 0.2s;
-        color:$text-color;
-        @extend .small-caps;
-      }   
-    } 
-    .content {
-      padding:30px;
-      padding-top:0;
-      opacity:0;
-      transition: all 0.2s;
-      *:last-child {
-        margin-bottom:0;
+        color: $primary-color;
       }
-    }
-    &[open] {
-      background:$light-color;
-      > summary {
-        &:before {
-          transform:rotate(45deg);
-          color:$primary-color;
-        }
-      }
-      .content {
-        opacity:1;
-      }
-    }
-    &.numbered {
-      summary {
-        &:before {
-          content: "0" counter(step-counter);
-          transform:none!important;
-        }
-      }
-          
     }
   }
-  
+  summary {
+    position: relative;
+    @extend.h5;
+    margin-bottom:0;
+    list-style: none;
+    cursor: pointer;
+    padding: 30px;
+    padding-right: 80px;
+    transition: $transition;
+    border-radius: 8px;
+    &:before {
+      position: absolute;
+      content: "+";
+      right: 30px;
+      transition: all 0.2s;
+      color: $text-color;
+      @extend .small-caps;
+    }
+  }
+  .content {
+    padding: 30px;
+    padding-top: 0;
+    opacity: 0;
+    transition: all 0.2s;
+    margin-top: 24px;
+    *:last-child {
+      margin-bottom: 0;
+    }
+  }
+  &[open] {
+    > summary {
+      &:before {
+        transform: rotate(45deg);
+        color: $primary-color;
+      }
+    }
+    .content {
+      opacity: 1;
+    }
+  }
+  &.numbered {
+    summary {
+      &:before {
+        content: "0" counter(step-counter);
+        transform: none !important;
+      }
+    }
+  }
+}

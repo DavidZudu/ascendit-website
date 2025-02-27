@@ -1,14 +1,34 @@
-  {% if options.sectionAnchor %}<span class="anchor-element" {{options.sectionAnchor ? 'id="'~ options.sectionAnchor ~'"'}} {{options.sectionAnchorLabel ? 'data-label="'~ options.sectionAnchorLabel ~'"'}}></span>{% endif %}
- <flynt-component name="BlockAccordions"   class="{{options.backgroundColor}} {{options.paddingSize}} {{fn('disablePadding',options.padding)}}">
-  {{fn('getBackgroundPattern',options.backgroundPattern)}}
-  <div class="{{options.containerSize}}">
-     {% for acc in accordions %}
-      <details class="dc-accordion {{options.isNumbered ? 'numbered' }}" {{acc.isOpen ? 'open' }}> 
-        <summary>{{acc.title}}</summary>
-        <div class="content">
-          {{acc.content}}
-        </div> 
-      </details>
-    {% endfor %}
-  </div>
+{% if options.sectionAnchor %}
+    <span class="anchor-element" {{options.sectionAnchor ? 'id="'~ options.sectionAnchor ~'"'}} {{options.sectionAnchorLabel ? 'data-label="'~ options.sectionAnchorLabel ~'"'}}></span>
+{% endif %}
+<flynt-component name="BlockAccordions" class="{{options.backgroundColor}} {{options.paddingSize}} {{fn('disablePadding',options.padding)}}">
+    {{fn('getBackgroundPattern',options.backgroundPattern)}}
+    <div class="{{options.containerSize}}">
+        {{sectionIntro}}
+    </div>
+    <div class="{{options.containerSize}}">
+        {% set half = (accordions|length / 2)|round(0, 'floor') %}
+
+        <div class="first-half mb24">
+            {% for acc in accordions[:half] %}
+                <details class="dc-accordion {{ options.isNumbered ? 'numbered' }}" {{ acc.isOpen ? 'open' }}>
+                    <summary>{{ acc.title }}</summary>
+                    <div class="content">
+                        {{ acc.content }}
+                    </div>
+                </details>
+            {% endfor %}
+        </div>
+
+        <div class="second-half">
+            {% for acc in accordions[half:] %}
+                <details class="dc-accordion {{ options.isNumbered ? 'numbered' }}" {{ acc.isOpen ? 'open' }}>
+                    <summary>{{ acc.title }}</summary>
+                    <div class="content">
+                        {{ acc.content }}
+                    </div>
+                </details>
+            {% endfor %}
+        </div>
+    </div>
 </flynt-component>

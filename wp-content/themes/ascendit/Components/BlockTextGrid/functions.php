@@ -1,9 +1,9 @@
 <?php
-namespace Flynt\Components\BlockContentGrid;
+namespace Flynt\Components\BlockTextGrid;
 
 use Flynt\FieldVariables;
 
-add_filter('Flynt/addComponentData?name=BlockContentGrid', function ($data) {
+add_filter('Flynt/addComponentData?name=BlockTextGrid', function ($data) {
     if (isset($data['options']['sectionAnchor'])) {
         $data['options']['sectionAnchorLabel'] = $data['options']['sectionAnchor'];
         $data['options']['sectionAnchor']      = preg_replace('/[^A-Za-z0-9]/', '-', strtolower($data['options']['sectionAnchor']));
@@ -15,8 +15,8 @@ add_filter('Flynt/addComponentData?name=BlockContentGrid', function ($data) {
 function getACFLayout()
 {
     return [
-        'name'       => 'BlockContentGrid',
-        'label'      => __('Block: Content Grid', 'flynt'),
+        'name'       => 'BlockTextGrid',
+        'label'      => __('Block: Text Grid', 'flynt'),
         'sub_fields' => [
             [
                 'label'     => __('Content', 'flynt'),

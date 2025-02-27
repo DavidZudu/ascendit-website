@@ -1,4 +1,4 @@
-[name="BlockContentGrid"] {
+[name="BlockTextGrid"] {
   .link-grid {
     display: grid;
     gap: 32px;
@@ -12,7 +12,7 @@
     }
 
     &--two {
-      @include grid-template(2);
+      @include grid-template(1);
 
       @media (min-width: 768px) {
         @include grid-template(2);
@@ -48,21 +48,10 @@
     }
   }
   .link-grid__item {
-    background:$mid-dark-color;
-    padding:72px;
-    border-radius:8px;
-    text-align: center;
     .link-grid__image {
-      .emoji {
-        font-size:72px;
-        display:inline-block;
-        line-height:1em;
-        margin-bottom:24px;
-      }
-    }
-    .link-grid__content{
-      *:last-child{
-        margin-bottom:0;
+      margin-bottom:24px;
+      .emoji{
+        font-size:32px;
       }
     }
   }
