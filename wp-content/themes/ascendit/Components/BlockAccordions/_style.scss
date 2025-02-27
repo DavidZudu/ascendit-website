@@ -2,8 +2,9 @@
   > div {
     display: flex;
     flex-direction: column;
-    gap:24px;
+    
     @media screen and (min-width: 992px) {
+      gap:24px;
       flex-direction: row;
       > div {
         flex: 1;
