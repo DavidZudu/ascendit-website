@@ -24,7 +24,7 @@ add_action('Flynt/afterRegisterComponents', function () {
                     // Components\BlockPageNav\getACFLayout(),
                     Components\BlockAccordions\getACFLayout(),
                     Components\BlockSplitContent\getACFLayout(),
-                    // Components\BlockWysiwyg\getACFLayout(),
+                    Components\BlockWysiwyg\getACFLayout(),
                     Components\BlockCTABar\getACFLayout(),
                     // Components\BlockFullImageBackground\getACFLayout(),
                     // Components\BlockPostsArchive\getACFLayout(),
