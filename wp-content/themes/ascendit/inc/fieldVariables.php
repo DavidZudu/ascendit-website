@@ -158,3 +158,12 @@ function setAnchor()
         'instructions' => 'Anchor'        
     ];    
 }
+function setExtraClasses()
+{
+    return [
+        'label' => __('Extra classes', 'flynt'),
+        'name' => 'extraClasses',
+        'type' => 'text',
+        'instructions' => 'Add extra classes to the section'        
+    ];    
+}

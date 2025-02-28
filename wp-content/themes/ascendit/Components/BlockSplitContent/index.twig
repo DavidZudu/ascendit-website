@@ -1,7 +1,7 @@
 {% if options.sectionAnchor %}
     <span class="anchor-element" {{options.sectionAnchor ? 'id="'~ options.sectionAnchor ~'"'}} {{options.sectionAnchorLabel ? 'data-label="'~ options.sectionAnchorLabel ~'"'}}></span>
 {% endif %}
-<flynt-component name="BlockSplitContent" class="componentSpacing    {{options.backgroundColor}} {{options.paddingSize}} {{fn('disablePadding',options.padding)}}">
+<flynt-component name="BlockSplitContent" class="componentSpacing    {{options.backgroundColor}} {{options.paddingSize}} {{options.extraClasses}} {{fn('disablePadding',options.padding)}}">
     <div class="{{options.containerSize}}">
         <article
             class="image {{imagePosition}}">

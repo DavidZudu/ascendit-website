@@ -120,7 +120,7 @@ function getACFLayout()
                     ],
                     FieldVariables\setPadding(),
 
-                    FieldVariables\setAnchor(),
+                    FieldVariables\setExtraClasses(),FieldVariables\setAnchor(),
                 ],
             ],
         ],
