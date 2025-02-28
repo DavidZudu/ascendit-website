@@ -1,7 +1,7 @@
 {% if options.sectionAnchor %}
     <span class="anchor-element" {{options.sectionAnchor ? 'id="'~ options.sectionAnchor ~'"'}} {{options.sectionAnchorLabel ? 'data-label="'~ options.sectionAnchorLabel ~'"'}}></span>
 {% endif %}
-<flynt-component name="BlockContentCircles" class="componentSpacing {{fn('disablePadding',options.padding)}}">
+<flynt-component name="BlockContentCircles" class="componentSpacing {{options.extraClasses}} {{fn('disablePadding',options.padding)}}">
     <div class="container">
         {% set maxColumns = options.maxColumns ?? 'two' %}
          {% if sectionIntro %}

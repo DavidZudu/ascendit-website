@@ -3,6 +3,7 @@ import FlyntComponent from './scripts/FlyntComponent'
 import './scripts/swiper'
 import './scripts/emoji-grow'
 import './scripts/smooth-scroll'
+import './scripts/background-colors'
 
 import 'lazysizes'
 
