@@ -54,6 +54,7 @@ function getACFLayout()
                     // FieldVariables\setPadding(),
                     // FieldVariables\setPaddingSize(),
                     FieldVariables\setBackgroundPattern(),
+                    FieldVariables\setAdditionalText(),
                     FieldVariables\setExtraClasses(),FieldVariables\setAnchor()
                 ]
             ]

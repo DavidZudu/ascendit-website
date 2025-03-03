@@ -119,7 +119,7 @@ function getACFLayout()
                         ],
                     ],
                     FieldVariables\setPadding(),
-
+                    FieldVariables\setAdditionalText(),
                     FieldVariables\setExtraClasses(),FieldVariables\setAnchor(),
                 ],
             ],

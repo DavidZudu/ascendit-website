@@ -37,6 +37,7 @@
                 </div>
             {% endfor %}
         </div>
+        {% if ctaLinks %}
         <div class="ctas {{centerContent ? 'center-content'}}">
             {% for btn in ctaLinks %}
                 <a class="button {{btn.style}}" href="{{ btn.cta.url }}" {{btn.cta.target == '_blank' ? 'target="_blank" rel="noopener noreferrer"' }}>
@@ -45,5 +46,11 @@
                 </a>
             {% endfor %}
         </div>
+        {% endif %}
     </div>
+     <aside class="additional-text">
+        <div class="container">
+            {{options.additionalText}}  
+        </div>
+    </aside>
 </flynt-component>

@@ -167,3 +167,13 @@ function setExtraClasses()
         'instructions' => 'Add extra classes to the section'        
     ];    
 }
+function setAdditionalText()
+{
+    return [
+        'label' => __('Additional text', 'flynt'),
+        'name' => 'additionalText',
+        'type' => 'textarea',
+        'rows' => 3,
+        'instructions' => 'Add additional text to the bottom of the section'        
+    ];    
+}
