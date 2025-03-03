@@ -26,7 +26,7 @@
         
         // Reduce final font size by 20px
         if (element.classList.contains('sm')){
-            fontSize = Math.max(fontSize * 0.5, 10);
+            fontSize = Math.max(fontSize * 0.7, 10);
         }
         
         element.style.fontSize = fontSize + 'px';

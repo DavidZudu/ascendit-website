@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     console.log("Background colors script loaded");
     const bgElements = [...document.querySelectorAll(".bg-effect")];
-    const colors = ["#355462", "#055554", "#094a66"];
+    const colors = ["#055554", "#055554", "#094a66"];
     let colorIndex = 0;
 
     const observer = new IntersectionObserver((entries) => {
