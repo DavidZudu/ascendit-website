@@ -25,7 +25,10 @@
         }
         
         // Reduce final font size by 20px
-        fontSize = Math.max(fontSize - 0, 10);
+        if (element.classList.contains('sm')){
+            fontSize = Math.max(fontSize * 0.5, 10);
+        }
+        
         element.style.fontSize = fontSize + 'px';
     });
 }

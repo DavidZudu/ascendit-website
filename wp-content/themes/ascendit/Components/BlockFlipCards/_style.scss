@@ -51,7 +51,7 @@
           border-radius: 16px;
           background: $teal; 
           overflow: hidden;
-          padding: 32px;
+          padding: 32px;          
           &.dark {
             background: $teal-d; 
           }
@@ -63,8 +63,8 @@
             position: absolute;
             top: 8px;
             right: 8px;
-            width: 32px;
-            height: 32px;
+            width: 48px;
+            height: 48px;
             border-radius: 99%;
             border: 2px solid $primary-color;
             background: 0;
@@ -77,8 +77,8 @@
             background: $dark-color;
             img {
               transform: rotate(45deg);
-              width: 10px;
-              height: 10px;
+              width: 16px;
+              height: 16px;
             }
           }
         }
@@ -106,6 +106,10 @@
           align-items: flex-start;
           transform: rotateY(180deg);
           overflow: auto;
+          padding-top:50px;
+          .close-icon {
+            transform: rotate(0)!important;
+          }
           /* Works on Webkit-based browsers (Chrome, Edge, Safari) */
           &::-webkit-scrollbar {
             width: 6px;
