@@ -13,11 +13,11 @@ $sides: (top, bottom, left, right, all);
   @each $side in $sides {
     @if $side == "all" {
       .m#{$space} {
-        margin: #{$space}px;
+        margin: #{$space}px!important;
       }
 
       .p#{$space} {
-        padding: #{$space}px;
+        padding: #{$space}px!important;
       }
     } @else {
       .m#{str-slice($side, 0, 1)}#{$space} {

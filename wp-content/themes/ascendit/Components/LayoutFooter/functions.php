@@ -25,9 +25,9 @@ add_filter('Flynt/addComponentData?name=LayoutFooter', function ($data) {
 Options::addGlobal('LayoutFooter', [
     // FieldVariables\setCTAs(),
     [
-        'label' => __('Form', 'flynt'),
+        'label' => __('Form Text', 'flynt'),
         'name' => 'form',
-        'type' => 'textarea',
+        'type' => 'wysiwyg',
         ],
     [
         'label' => __('Link Column', 'flynt'),
