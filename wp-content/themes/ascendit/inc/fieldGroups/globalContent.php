@@ -34,7 +34,16 @@ Options::addGlobal('ContactInfo', [
         'rows' => 5,
         'type' => 'textarea',
     ],
-
+    [
+        'name' => 'ContactModalTab',
+        'label' => __('Contact Modal Tab', 'flynt'),
+        'type' => 'tab',
+    ],
+    [
+    'label' => __('Contact Modal Content', 'flynt'),
+    'name' => 'contactModalContent',
+    'type' => 'wysiwyg',
+    ],
     [
         'name' => 'socialsTab',
         'label' => __('Social Media', 'flynt'),

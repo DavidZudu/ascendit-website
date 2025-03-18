@@ -2,6 +2,7 @@
 <html class="html {{ body_class }}" {{ site.language_attributes }}>
   <head>
     {% set snippets = fn('getCodeSnippets') %}
+    {% set contactInfo = fn('getContactOptions') %}
     {{snippets.headCode}}  
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -34,6 +35,17 @@
       
       </div>
     {% endblock %}
+<aside class="dc-modal" data-id="contact-modal" data-bg-close="true" role="dialog" aria-modal="true" aria-labelledby="contact-modal-title" aria-describedby="contact-modal-content">
+            <section class="dc-modal-container">
+                <div class="modal-nav">
+                    <button data-modal-close aria-label="Close Modal" class="close">X</button>
+                </div>
+                <div class="content" id="contact-modal-content">
+                   {{contactInfo.contactModalContent}}
+                </div>
+            </section>
+        </aside>
+
     <div class="wpFooter">
       {{ function('wp_footer') }}
       <script src="https://kit.fontawesome.com/df3cdd5667.js" crossorigin="anonymous"></script>

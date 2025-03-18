@@ -4,6 +4,7 @@ import './scripts/swiper'
 import './scripts/emoji-grow'
 import './scripts/smooth-scroll'
 import './scripts/background-colors'
+import './scripts/dc-modal'
 
 import 'lazysizes'
 

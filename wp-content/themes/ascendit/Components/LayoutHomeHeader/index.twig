@@ -12,11 +12,13 @@
     </article>
     <article class="content">
       {{content}}
+      {% if ctaLinks %}
       <div class="ctas">
         {% for btn in ctaLinks %}
           <a href="{{btn.cta.url}}" class="button {{btn.style}}">{{btn.cta.title}}</a>
         {% endfor %}
-      </div>      
+      </div>   
+      {% endif %}   
     </article>
   </div>
 </flynt-component>
